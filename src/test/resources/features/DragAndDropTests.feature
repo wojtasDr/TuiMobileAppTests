@@ -1,4 +1,5 @@
-Feature: Test drag and drop functionality
+@dragAndDropTests @regression
+Feature: Test drag and drop view functionality
 
   Scenario: Check if drag "Drag Me" element and drop it to "Drop here" zone generates success message
     Given "Login" page is displayed

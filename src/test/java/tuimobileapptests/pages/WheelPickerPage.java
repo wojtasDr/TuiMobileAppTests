@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import tuimobileapptests.utils.ActionsUtils;
 
 @Component
 @Profile({"android"})
@@ -25,8 +24,9 @@ public class WheelPickerPage extends BaseTestPage {
     @AndroidFindBy(xpath = "//android.widget.ListView")
     private WebElement spinnerList;
 
-    @Autowired
-    ActionsUtils actionsUtils;
+    private By spinnerOptionLocator(String optionText) {
+        return By.xpath("//android.widget.CheckedTextView[@text='" + optionText + "']");
+    }
 
     @Autowired
     public WheelPickerPage(AppiumDriver driver) {
@@ -35,7 +35,6 @@ public class WheelPickerPage extends BaseTestPage {
 
     public void setColorOnSpinner(String color) {
         colorSpinner.click();
-        spinnerList
-                .findElement(By.xpath("//android.widget.CheckedTextView[@resource-id='android:id/text1'][@text='" + color + "']")).click();
+        spinnerList.findElement(spinnerOptionLocator(color)).click();
     }
 }

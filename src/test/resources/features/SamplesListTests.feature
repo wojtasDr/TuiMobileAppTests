@@ -1,5 +1,7 @@
+@sampleListTests @regression
 Feature: Test samples list functionality
 
+  @smoke
   Scenario Outline: Check if possible to login, go to chosen view and log out
     Given "Login" page is displayed
     When I login with user "admin" and password "admin"

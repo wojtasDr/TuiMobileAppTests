@@ -11,9 +11,8 @@ public class SamplesListPageSteps implements En {
 
     public SamplesListPageSteps() {
 
-        When("^I go to \"(carousel|double tap|drag and drop|long press|native|photo|slider|vertical swipe|web|wheel picker)\" view$", (String vieName) -> {
-                    samplesListPage.goToView(vieName);
-                }
+        When("^I go to \"(carousel|double tap|drag and drop|long press|native|photo|slider|vertical swipe|web|wheel picker)\" view$", (String vieName) ->
+                samplesListPage.goToView(vieName)
         );
     }
 

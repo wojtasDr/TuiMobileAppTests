@@ -23,6 +23,14 @@ public class ActionsUtils {
         this.driver = driver;
     }
 
+    /**
+     * This method scrolls to element with text equal to elementText.
+     * Method scrolls down to the element. In order to find element that are higher than current view app scrolls
+     * to beginning first.
+     *
+     * @param elementText text of element
+     * @return the element that the application has scrolled to
+     */
     public WebElement scrollToElement(String elementText) {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(2)"));
 
@@ -30,11 +38,14 @@ public class ActionsUtils {
                 .androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
     }
 
-//    public WebElement scrollToElement2(WebElement webElement) {
-//        return driver.findElement(AppiumBy
-//                .androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))"));
-//    }
-
+    /**
+     * This method is used to simulate double tap gesture. Gesture is simulated with mouse left click action
+     * on given element. TOUCH pointer input makes sequence of mouse button actions. It moves the pointer to the
+     * middle of element, press left mouse button over the element, pause for 100ms, release left mouse button.
+     * Such sequence is performed twice.
+     *
+     * @param element element to be double tapped
+     */
     public void doubleTapElement(WebElement element) {
         Point location = element.getLocation();
         Dimension size = element.getSize();
@@ -55,19 +66,39 @@ public class ActionsUtils {
         driver.perform(Collections.singletonList(sequence));
     }
 
+    /**
+     * This method is used to simulate long press gesture action on given element.
+     * Action is simulated by mouse left click.
+     * Method performs left click, makes 1000ms pause and releases the mouse button.
+     *
+     * @param element element to be long clicked
+     */
     public void longPress(WebElement element) {
         Actions actions = new Actions(driver);
         actions.clickAndHold(element).pause(1000).release().perform();
 
     }
 
+    /**
+     * This method is used to simulate drag and drop gesture on elements. Method drags sourceElement
+     * and drops it on targetElement
+     *
+     * @param sourceElement element to be dragged and dropped to targetElement
+     * @param targetElement element used as a target for dragged and dropped element
+     */
     public void dragAndDropElement(WebElement sourceElement, WebElement targetElement) {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(sourceElement, targetElement).perform();
     }
 
+    /**
+     * This method is used to calculate center point of element.
+     *
+     * @param location element location (upper-left point of element)
+     * @param size element size (width and height)
+     * @return center point of given element (x,y coordinates)
+     */
     private Point getCenterOfElement(Point location, Dimension size) {
         return new Point(location.getX() + size.getWidth() / 2, location.getY() + size.getHeight() / 2);
     }
-
 }

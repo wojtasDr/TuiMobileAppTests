@@ -1,3 +1,4 @@
+@longPressTests @regression
 Feature: Test long press view functionality
 
   Scenario: Check if long press on "Long Press Me" button generates success alert

@@ -1,5 +1,7 @@
+@loginTests @regression
 Feature: Test login and log out functionality
 
+  @smoke
   Scenario: Check if possible to login with valid credentials and log out
     Given "Login" page is displayed
     When I login with user "admin" and password "admin"

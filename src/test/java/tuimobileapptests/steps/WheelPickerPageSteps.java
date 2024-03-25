@@ -15,11 +15,11 @@ public class WheelPickerPageSteps implements En {
 
     public WheelPickerPageSteps() {
 
-        Then("Following color is set {string}", (String expectedColor) ->
+        Then("The {string} color is set", (String expectedColor) ->
                 commonValidators.elementContainsText(wheelPickerPage.getCurrentColorLabel(), expectedColor)
         );
 
-        When("I set following spinner color {string}", (String color) -> wheelPickerPage.setColorOnSpinner(color));
+        When("^I set spinner color to \"(black|blue|green|red)\"$", (String color) -> wheelPickerPage.setColorOnSpinner(color));
     }
 
 }

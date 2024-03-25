@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"classpath:features/"},
         glue = {"tuimobileapptests.steps"},
+        tags = "@regression",
         plugin = {"pretty", "json:target/cucumber-report/cucumber.json", "html:target/cucumber-report/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class RunCucumberIT {

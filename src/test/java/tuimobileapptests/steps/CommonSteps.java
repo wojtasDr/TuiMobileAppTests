@@ -26,7 +26,6 @@ public class CommonSteps implements En {
         Given("{string} page is displayed", (String expectedPageTitle) -> {
                     Thread.sleep(1000);
                     waitUtils.waitUntilElementHasText(30, commonPage.getPageTitle(), expectedPageTitle);
-                    // commonValidators.elementHasText(commonPage.getPageTitle(), expectedPageTitle);
                 }
         );
 

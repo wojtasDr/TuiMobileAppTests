@@ -1,4 +1,5 @@
-Feature: Test double tap functionality
+@doubleTapTests @regression
+Feature: Test double tap view functionality
 
   Scenario: Check if double tap on "Double Tap Me" button generates success alert
     Given "Login" page is displayed

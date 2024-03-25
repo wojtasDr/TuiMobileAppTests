@@ -11,7 +11,7 @@ import java.time.Duration;
 @Component
 public class WaitUtils {
 
-    private AppiumDriver driver;
+    private final AppiumDriver driver;
 
     public WaitUtils(AppiumDriver driver) {
         this.driver = driver;

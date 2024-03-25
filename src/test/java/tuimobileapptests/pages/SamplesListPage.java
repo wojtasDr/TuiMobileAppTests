@@ -2,8 +2,6 @@ package tuimobileapptests.pages;
 
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -15,36 +13,6 @@ import static tuimobileapptests.datastructure.SampleViews.*;
 @Profile({"android"})
 public class SamplesListPage extends BaseTestPage {
 
-    @AndroidFindBy(accessibility = "chainedView")
-    private WebElement nativeViewButton;
-
-    @AndroidFindBy(accessibility = "slider1")
-    private WebElement sliderViewButton;
-
-    @AndroidFindBy(accessibility = "verticalSwipe")
-    private WebElement verticalSwipeViewButton;
-
-    @AndroidFindBy(accessibility = "dragAndDrop")
-    private WebElement dragAndDropViewButton;
-
-    @AndroidFindBy(accessibility = "doubleTap")
-    private WebElement doubleTapViewButton;
-
-    @AndroidFindBy(accessibility = "longPress")
-    private WebElement longPressViewButton;
-
-    @AndroidFindBy(accessibility = "photoView")
-    private WebElement photoViewButton;
-
-    @AndroidFindBy(accessibility = "webView")
-    private WebElement webViewButton;
-
-    @AndroidFindBy(accessibility = "carousel")
-    private WebElement carouselViewButton;
-
-    @AndroidFindBy(accessibility = "wheelPicker")
-    private WebElement wheelPickerViewButton;
-
     @Autowired
     ActionsUtils actionsUtils;
 
@@ -53,30 +21,8 @@ public class SamplesListPage extends BaseTestPage {
         this.driver = driver;
     }
 
-//    public void goToView(String viewName) {
-//        switch (viewName) {
-//            case "native" -> nativeViewButton.click();
-//            case "slider" -> sliderViewButton.click();
-//            case "vertical swipe" -> verticalSwipeViewButton.click();
-//            case "drag and drop" -> dragAndDropViewButton.click();
-//            case "double tap" -> doubleTapViewButton.click();
-//            case "long press" -> longPressViewButton.click();
-//            case "photo" -> photoViewButton.click();
-//            case "web" -> {
-//                actionsUtils.scrollToElement("Wev view");
-//                webViewButton.click();
-//            }
-//            case "carousel" -> {
-//                actionsUtils.scrollToElement("Carousel");
-//                carouselViewButton.click();
-//            }
-//            case "wheel picker" -> wheelPickerViewButton.click();
-//            default -> throw new IllegalStateException("Invalid view name: " + viewName);
-//        }
-//    }
-
     public void goToView(String viewName) {
-        String textElement = "";
+        String textElement;
 
         switch (viewName) {
             case "native" -> textElement = NATIVE_VIEW.getViewText();

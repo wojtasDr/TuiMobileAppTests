@@ -1,4 +1,5 @@
-Feature: Test vertical swiping functionality
+@verticalSwiping @regression
+Feature: Test vertical swiping view functionality
 
   Scenario: Check if vertical swipe down to element is possible
     Given "Login" page is displayed

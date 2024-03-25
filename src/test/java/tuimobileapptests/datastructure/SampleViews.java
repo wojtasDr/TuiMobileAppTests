@@ -24,8 +24,4 @@ public enum SampleViews {
         this.viewName = viewName;
         this.viewText = viewText;
     }
-
-//    private static class Constants {
-//        public static final String CAROUSEL_VIEW_NAME = "carousel";
-//    }
 }
