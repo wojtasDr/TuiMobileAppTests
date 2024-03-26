@@ -12,7 +12,6 @@ public abstract class BaseTestPage {
 
     @PostConstruct
     private void initWebElements() {
-        System.out.println("Init web elements " + this.getClass().getName());
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(30)), this);
     }
 }
