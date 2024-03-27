@@ -40,7 +40,7 @@ In order to run the tests it is necessary to:
 3. Go to _/TuiMobileAppTests/src/test/resources/application.properties_ file and set apk.file.url property (paste path to appiumChallenge.apk)
 4. Open terminal and run Appium server with
 ```sh
-appium --no-cors
+appium --allow-cors
 ```
 5. Start your Android Emulator
 6. Go to _/TuiMobileAppTests/src/test/java/tuimobileapptests/springconfig/AndroidAppiumDriverFactory.java_ class 
@@ -78,7 +78,7 @@ Please note that _snapshot_ section is added under each failed scenario.
 4. Start Session. 
 In order to start session successfully start appium server and Android Emulator first
 ```sh
-appium --no-cors
+appium --allow-cors
 ```
 
 
